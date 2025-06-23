@@ -1,0 +1,404 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* PDF-inspired Theme Colors */
+:root {
+  --purple-primary: #8B5CF6;
+  --purple-light: #A78BFA;
+  --blue-app: #3B82F6;
+  --green-app: #10B981;
+  --orange-app: #F59E0B;
+  --red-app: #EF4444;
+  --purple-app: #8B5CF6;
+  --blue-dark-app: #1E40AF;
+  --gray-text: #374151;
+  --gray-light: #F9FAFB;
+  --white: #FFFFFF;
+}
+
+.dark {
+  --purple-primary: #A78BFA;
+  --purple-light: #C4B5FD;
+  --gray-text: #D1D5DB;
+  --gray-light: #1F2937;
+  --white: #111827;
+}
+
+/* PDF Theme Override */
+.pdf-theme {
+  --primary: var(--purple-primary);
+  --primary-foreground: var(--white);
+  --accent: var(--purple-light);
+  --accent-foreground: var(--white);
+  --background: var(--gray-light);
+  --foreground: var(--gray-text);
+  --card: var(--white);
+  --card-foreground: var(--gray-text);
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  --border: #E5E7EB;
+}
+
+.pdf-theme.dark {
+  --background: #0F172A;
+  --foreground: var(--gray-text);
+  --card: #1E293B;
+  --card-foreground: var(--gray-text);
+  --muted: #334155;
+  --muted-foreground: #94A3B8;
+  --border: #475569;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* PDF-inspired Dashboard Styles */
+.purple-gradient {
+  background: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-light) 100%);
+}
+
+.pdf-card {
+  background: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.pdf-card:hover {
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+/* App-specific colors */
+.app-ion {
+  background: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-light) 100%);
+}
+
+.app-toro {
+  background: var(--blue-app);
+}
+
+.app-rico {
+  background: var(--green-app);
+}
+
+.app-xp {
+  background: var(--purple-app);
+}
+
+.app-nu {
+  background: var(--orange-app);
+}
+
+.app-inter {
+  background: var(--red-app);
+}
+
+.app-btg {
+  background: var(--blue-dark-app);
+}
+
+/* App card styles */
+.app-card {
+  border-radius: 16px;
+  padding: 1.5rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.app-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(25px, -25px);
+}
+
+.app-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Section titles */
+.section-title {
+  color: var(--purple-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--purple-primary);
+  border-radius: 2px;
+}
+
+/* Metric cards */
+.metric-card {
+  background: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+}
+
+.metric-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  color: var(--gray-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Tags and badges */
+.profile-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 0.125rem;
+}
+
+.tag-iniciante {
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.tag-intermediario {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.tag-avancado {
+  background: #F3E8FF;
+  color: #7C3AED;
+}
+
+/* Star ratings */
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.star-filled {
+  color: #FCD34D;
+  fill: currentColor;
+}
+
+.star-empty {
+  color: #D1D5DB;
+}
+
+/* Update button styles */
+.update-button {
+  background: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-light) 100%);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.update-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.update-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading animation */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Chart customizations for PDF theme */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #E5E7EB;
+}
+
+.recharts-text {
+  fill: var(--gray-text);
+}
+
+.recharts-legend-item-text {
+  color: var(--gray-text) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.25rem;
+  }
+  
+  .metric-number {
+    font-size: 2rem;
+  }
+  
+  .app-card {
+    padding: 1rem;
+  }
+}
+
